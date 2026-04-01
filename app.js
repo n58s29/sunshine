@@ -205,7 +205,8 @@ $('bE').addEventListener('click',()=>{
   const blob=new Blob([JSON.stringify(C,null,2)],{type:'application/json'});
   const a=document.createElement('a');a.href=URL.createObjectURL(blob);
   a.download=`sensibilisation-${d}-${col}.json`;
-  a.click();URL.revokeObjectURL(a.href);toast('JSON exporté ✓')});
+  a.click();URL.revokeObjectURL(a.href);toast('JSON exporté ✓');
+  $('mo').classList.add('open');});
 
 // ===== EXPORT MAIL (.eml with HTML body) =====
 function buildEml(){
@@ -341,7 +342,6 @@ $('bM').addEventListener('click',()=>{
   a.download=`recap-sensibilisation-${C.session.date||'undated'}-${col}.eml`;
   a.click();URL.revokeObjectURL(a.href);
   toast('Mail .eml généré — ouvrir avec Outlook ✓');
-  $('mo').classList.add('open');
 });
 $('moOk').addEventListener('click',()=>$('mo').classList.remove('open'));
 $('mo').addEventListener('click',e=>{if(e.target===$('mo'))$('mo').classList.remove('open')});

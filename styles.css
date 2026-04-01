@@ -5,7 +5,10 @@ body{font-family:'Avenir','Avenir Next','Nunito',system-ui,sans-serif;background
 .hd{background:var(--nv);color:var(--w);padding:1.3rem 2rem 1rem;position:relative;overflow:hidden}
 .hd::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--bl),var(--gd))}
 .hd-c{max-width:1050px;margin:0 auto;position:relative;z-index:1}
-.hd h1{font-size:1.35rem;font-weight:700;letter-spacing:-.02em;line-height:1.15;margin-bottom:.2rem}
+.hd-brand{display:flex;align-items:baseline;gap:.5rem;margin-bottom:.15rem}
+.hd-brand-name{font-size:1.7rem;font-weight:900;letter-spacing:.08em;color:var(--gd);line-height:1}
+.hd-brand-tag{font-size:.72rem;font-weight:400;color:rgba(255,255,255,.55);font-style:italic}
+.hd h1{font-size:1.05rem;font-weight:600;letter-spacing:-.01em;line-height:1.2;margin-bottom:.2rem;opacity:.9}
 .hd-meta{display:flex;gap:1.2rem;font-size:.78rem;font-weight:300;opacity:.8;flex-wrap:wrap}
 .hd-meta span{display:flex;align-items:center;gap:.25rem}
 .hd-deco{position:absolute;top:-15px;right:-15px;width:140px;height:140px;border-radius:50%;border:24px solid rgba(218,170,0,.06);pointer-events:none}

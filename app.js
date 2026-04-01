@@ -38,7 +38,7 @@ function mergeConfig(imported){
   }
   if(imported.features&&Array.isArray(imported.features)){
     c.features=imported.features.map(f=>{
-      const base={id:'custom-'+Date.now()+Math.random(),icon:'⚡',name:'',enabled:true,usecase:'',link:''};
+      const base={id:'custom-'+Date.now()+Math.random(),icon:'⚡',name:'',enabled:true,usecase:'',link:'',atelier:false};
       return {...base,...f};
     });
   } else { c.features=JSON.parse(JSON.stringify(DF.features)); }
@@ -67,9 +67,9 @@ function render(){
   const en=C.features.filter(f=>f.enabled);
   if(!en.length){$('fc').innerHTML='';$('em').style.display='block';return}
   $('em').style.display='none';
-  $('fc').innerHTML=en.map((f,i)=>`<div class="fc${doneSet.has(f.id)?' done':''}" data-fid="${f.id}" style="animation-delay:${i*.03}s">
-    <div class="fi">${f.icon}</div>
-    <div class="fn">${esc(f.name)}</div>
+  $('fc').innerHTML=en.map((f,i)=>`<div class="fc${doneSet.has(f.id)?' done':''}${f.atelier?' atelier':''}" data-fid="${f.id}" style="animation-delay:${i*.03}s">
+    <div class="fi"><span class="step-num">${i+1}</span>${f.icon}</div>
+    <div class="fn">${f.atelier?'<span class="atelier-badge">Atelier</span>':''}${esc(f.name)}</div>
     <div class="fu">${esc(f.usecase)||'<em style="color:var(--g500)">À définir</em>'}</div>
     <div class="fl">${f.link?`<a href="${esc(f.link)}" target="_blank" rel="noopener">Démo <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"/></svg></a>`:'<span class="nl">—</span>'}</div>
     <div class="ck" title="Marquer comme vu">✓</div>
@@ -133,11 +133,13 @@ function renderEdit(){
           <div class="fei-fields" ${f.enabled?'':'style="display:none"'} id="xf${i}">
             <div class="ef"><label>Cas d'usage</label><textarea data-i="${i}" class="eu" rows="1">${esc(f.usecase)}</textarea></div>
             <div class="ef"><label>Lien démo GPT SNCF</label><input type="url" data-i="${i}" class="el" value="${esc(f.link||'')}" placeholder="https://gpt.sncf.fr/..."></div>
+            <div class="ef" style="display:flex;align-items:center;gap:.5rem;"><label style="display:flex;align-items:center;gap:.4rem;cursor:pointer;margin:0;font-size:.72rem;font-weight:500;color:var(--at);"><input type="checkbox" ${f.atelier?'checked':''} data-i="${i}" class="ea"> Exercice participants (Atelier)</label></div>
           </div>
         </div>`).join('')}</div>
       <div class="add-row">
         <input type="text" id="nI" placeholder="🎯" style="flex:0 0 44px;text-align:center">
         <input type="text" id="nN" placeholder="Nom de la fonctionnalité">
+        <label style="display:flex;align-items:center;gap:.3rem;font-size:.72rem;white-space:nowrap;cursor:pointer;color:var(--at);font-weight:500;"><input type="checkbox" id="nA"> Atelier</label>
         <button class="add-btn" id="aB">+ Ajouter</button>
       </div>
     </div>`;
@@ -149,9 +151,9 @@ function renderEdit(){
     b.addEventListener('click',e=>{const i=+e.target.dataset.i;if(confirm('Supprimer « '+C.features[i].name+' » ?')){C.features.splice(i,1);save();renderEdit()}})});
   // add
   $('aB').addEventListener('click',()=>{
-    const icon=$('nI').value.trim()||'⚡',name=$('nN').value.trim();
+    const icon=$('nI').value.trim()||'⚡',name=$('nN').value.trim(),atelier=!!$('nA').checked;
     if(!name){toast('Donne un nom');return}
-    C.features.push({id:'c-'+Date.now(),icon,name,enabled:true,usecase:'',link:''});
+    C.features.push({id:'c-'+Date.now(),icon,name,enabled:true,usecase:'',link:'',atelier});
     save();renderEdit();toast(name+' ajoutée ✓')});
   // drag
   initDrag();
@@ -190,6 +192,7 @@ function readFields(){
   document.querySelectorAll('.tc').forEach(cb=>{C.features[+cb.dataset.i].enabled=cb.checked});
   document.querySelectorAll('.eu').forEach(ta=>{C.features[+ta.dataset.i].usecase=ta.value});
   document.querySelectorAll('.el').forEach(inp=>{C.features[+inp.dataset.i].link=inp.value});
+  document.querySelectorAll('.ea').forEach(cb=>{C.features[+cb.dataset.i].atelier=cb.checked});
 }
 
 function saveEd(){readFields();save();render();closeEd();toast('Configuration sauvegardée ✓')}

@@ -1,4 +1,4 @@
-:root{--nv:#001F5A;--bl:#0088CE;--gd:#DAAA00;--g100:#f4f5f7;--g200:#e4e7ec;--g300:#cdd2db;--g500:#7c849a;--w:#fff;--ss:0 1px 2px rgba(0,31,90,.06);--sm:0 3px 8px rgba(0,31,90,.09);--tr:.22s cubic-bezier(.4,0,.2,1)}
+:root{--nv:#001F5A;--bl:#0088CE;--gd:#DAAA00;--at:#7c3aed;--g100:#f4f5f7;--g200:#e4e7ec;--g300:#cdd2db;--g500:#7c849a;--w:#fff;--ss:0 1px 2px rgba(0,31,90,.06);--sm:0 3px 8px rgba(0,31,90,.09);--tr:.22s cubic-bezier(.4,0,.2,1)}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Avenir','Avenir Next','Nunito',system-ui,sans-serif;background:var(--g100);color:var(--nv);min-height:100vh;-webkit-font-smoothing:antialiased;font-size:14px}
 
@@ -19,7 +19,8 @@ body{font-family:'Avenir','Avenir Next','Nunito',system-ui,sans-serif;background
 .fc{display:grid;grid-template-columns:34px 190px 1fr auto 22px;align-items:center;gap:.7rem;background:var(--w);border-radius:6px;padding:.5rem .9rem;box-shadow:var(--ss);transition:var(--tr);border-left:3px solid transparent;animation:fiu .3s ease both}
 .fc:hover{box-shadow:var(--sm);border-left-color:var(--bl);transform:translateX(2px)}
 @keyframes fiu{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
-.fi{width:30px;height:30px;background:var(--g100);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.fi{width:30px;height:30px;background:var(--g100);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;position:relative}
+.step-num{position:absolute;top:-5px;left:-5px;background:var(--nv);color:var(--w);font-size:.5rem;font-weight:700;width:14px;height:14px;border-radius:50%;display:flex;align-items:center;justify-content:center;line-height:1}
 .fn{font-weight:600;font-size:.8rem}
 .fu{font-size:.78rem;color:#4a5568;line-height:1.35}
 .fl{flex-shrink:0}
@@ -30,6 +31,12 @@ body{font-family:'Avenir','Avenir Next','Nunito',system-ui,sans-serif;background
 .fc.done{border-left-color:var(--gd);background:#fdfcf6}
 .fc.done .fn,.fc.done .fu{opacity:.5}
 .fc.done .fi{background:#f5f0d8}
+.fc.atelier{border-left-color:var(--at);background:#f5f3ff}
+.fc.atelier .fi{background:#ede9fe}
+.fc.atelier .step-num{background:var(--at)}
+.fc.atelier.done{background:#eee9f5}
+.fc.atelier.done .fi{background:#ddd6fe}
+.atelier-badge{display:inline-block;background:var(--at);color:var(--w);font-size:.6rem;font-weight:700;padding:.1rem .35rem;border-radius:3px;margin-right:.3rem;vertical-align:middle;letter-spacing:.03em}
 .ck{width:22px;height:22px;border-radius:50%;border:2px solid var(--g300);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:var(--tr);flex-shrink:0;font-size:.7rem;color:transparent;user-select:none}
 .ck:hover{border-color:var(--gd);background:rgba(218,170,0,.08)}
 .fc.done .ck{background:var(--gd);border-color:var(--gd);color:var(--w)}

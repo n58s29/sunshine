@@ -216,10 +216,17 @@ function buildEml(){
   const subject=`Récap sensibilisation IA Générative — ${C.session.collectif}${C.session.metier?' ('+C.session.metier+')':''} — ${dateFr}`;
 
   let rows='';
-  en.forEach(f=>{
+  en.forEach((f,i)=>{
+    const num=i+1;
+    const isAtelier=!!f.atelier;
+    const bg=isAtelier?'#f5f3ff':'#ffffff';
+    const nameCellStyle=`padding:6px 12px;font-family:Aptos,Calibri,Arial,sans-serif;font-size:11pt;color:#001F5A;font-weight:600;border-bottom:1px solid #e4e7ec;white-space:nowrap;vertical-align:top;background:${bg};`;
+    const ucCellStyle=`padding:6px 12px;font-family:Aptos,Calibri,Arial,sans-serif;font-size:11pt;color:#333;border-bottom:1px solid #e4e7ec;vertical-align:top;background:${bg};`;
+    const numBadge=`<span style="display:inline-block;background:${isAtelier?'#7c3aed':'#001F5A'};color:#fff;font-size:8pt;font-weight:700;width:16px;height:16px;border-radius:50%;text-align:center;line-height:16px;margin-right:6px;vertical-align:middle;">${num}</span>`;
+    const atelierBadge=isAtelier?`<span style="display:inline-block;background:#7c3aed;color:#fff;font-size:7.5pt;font-weight:700;padding:1px 5px;border-radius:3px;margin-right:5px;vertical-align:middle;">Atelier</span>`:'';
     rows+=`<tr>
-      <td style="padding:6px 12px;font-family:Aptos,Calibri,Arial,sans-serif;font-size:11pt;color:#001F5A;font-weight:600;border-bottom:1px solid #e4e7ec;white-space:nowrap;vertical-align:top;">${f.name}</td>
-      <td style="padding:6px 12px;font-family:Aptos,Calibri,Arial,sans-serif;font-size:11pt;color:#333;border-bottom:1px solid #e4e7ec;vertical-align:top;">${esc(f.usecase)||'—'}</td>
+      <td style="${nameCellStyle}">${numBadge}${atelierBadge}${esc(f.name)}</td>
+      <td style="${ucCellStyle}">${esc(f.usecase)||'—'}</td>
     </tr>`;
   });
 

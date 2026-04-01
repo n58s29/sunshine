@@ -71,7 +71,7 @@ function render(){
     <div class="fi"><span class="step-num">${i+1}</span>${f.icon}</div>
     <div class="fn">${f.atelier?'<span class="atelier-badge">Atelier</span>':''}${esc(f.name)}</div>
     <div class="fu">${esc(f.usecase)||'<em style="color:var(--g500)">À définir</em>'}</div>
-    <div class="fl">${f.link?`<a href="${esc(f.link)}" target="_blank" rel="noopener">Démo <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"/></svg></a>`:'<span class="nl">—</span>'}</div>
+    <div class="fl">${f.link?`<a href="${esc(f.link)}" class="demo-link" rel="noopener">Démo <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"/></svg></a>`:'<span class="nl">—</span>'}</div>
     <div class="ck" title="Marquer comme vu">✓</div>
   </div>`).join('');
   $('fc').querySelectorAll('.ck').forEach(ck=>{
@@ -368,5 +368,16 @@ function closeInfo(){
 }
 $('fabInfo').addEventListener('click',()=>{$('ip').classList.contains('open')?closeInfo():openInfo()});
 $('ix').addEventListener('click',closeInfo);
+
+// ===== DEMO LINKS — open in right-half window =====
+document.addEventListener('click',e=>{
+  const a=e.target.closest('.demo-link');
+  if(!a)return;
+  e.preventDefault();
+  const w=Math.round(window.screen.width/2);
+  const h=window.screen.height;
+  const left=window.screen.width-w;
+  window.open(a.href,'demo-gpt',`width=${w},height=${h},left=${left},top=0,resizable=yes`);
+});
 
 render();

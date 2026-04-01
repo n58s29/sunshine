@@ -5,8 +5,6 @@ body{font-family:'Avenir','Avenir Next','Nunito',system-ui,sans-serif;background
 .hd{background:var(--nv);color:var(--w);padding:1.3rem 2rem 1rem;position:relative;overflow:hidden}
 .hd::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--bl),var(--gd))}
 .hd-c{max-width:1050px;margin:0 auto;position:relative;z-index:1}
-.hd-badge{display:inline-flex;align-items:center;gap:.35rem;background:rgba(255,255,255,.1);padding:.2rem .7rem;border-radius:14px;font-size:.7rem;font-weight:500;margin-bottom:.6rem}
-.hd-badge .dot{width:5px;height:5px;background:var(--gd);border-radius:50%}
 .hd h1{font-size:1.35rem;font-weight:700;letter-spacing:-.02em;line-height:1.15;margin-bottom:.2rem}
 .hd-meta{display:flex;gap:1.2rem;font-size:.78rem;font-weight:300;opacity:.8;flex-wrap:wrap}
 .hd-meta span{display:flex;align-items:center;gap:.25rem}

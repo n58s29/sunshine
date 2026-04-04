@@ -641,6 +641,8 @@ body {
 .btn-e:hover { opacity: .88; }
 .btn-m { background: var(--ambre); color: var(--bleu-marine); }
 .btn-m:hover { opacity: .9; }
+.btn-r { background: #fee2e2; color: #b91c1c; }
+.btn-r:hover { background: #fecaca; }
 
 /* ── FOOTER ── */
 .pf {

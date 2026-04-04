@@ -356,6 +356,13 @@ $('fi').addEventListener('change',e=>{
     else{toast('Fichier invalide ✗')}}catch{toast('Erreur JSON ✗')}};
   r.readAsText(f);e.target.value=''});
 
+$('bR').addEventListener('click',()=>{
+  if(!confirm('Supprimer toutes les données et repartir de zéro ?'))return;
+  localStorage.removeItem('sg-config');
+  C=JSON.parse(JSON.stringify(DF));
+  render();closeEd();toast('Données effacées ✓');
+});
+
 $('fab').addEventListener('click',()=>{closeInfo();$('ep').classList.contains('open')?closeEd():openEd()});
 $('ov').addEventListener('click',()=>{closeEd();closeInfo()});
 $('ex').addEventListener('click',closeEd);

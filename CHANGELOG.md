@@ -2,8 +2,14 @@
 
 ## [En cours] — 2026-04-04
 
+### Ajouté
+- Bouton **🗑 Réinitialiser** dans le panneau de configuration : vide toutes les données et recharge la page avec les briques essentielles prêtes à remplir
+
 ### Modifié
-- Refonte graphique UX/UI (charte visuelle, mise en page, typographie…)
+- Refonte graphique UX/UI complète (charte FAN — palette, typographie Avenir, élévation, cartes)
+- Numérotation des briques : le carré gris est supprimé, remplacé par un cercle coloré seul (`--primaire` bleu marine par défaut, `--lavande` en mode Atelier, `--ambre` quand la brique est marquée vue)
+- L'emoji/icône de chaque fonctionnalité est supprimé de l'affichage et du panneau de configuration
+- Les briques essentielles après réinitialisation sont : Sources (Recherche sur internet, Lecteur web, Analyser vos propres fichiers), Outils (Génération d'image, Traduire un document, Envoyer un mail, Générer un fichier audio, Canvas), Assistant (Créer votre propre assistant, Utiliser 'Outils communication' pour des documents à la charte)
 
 ---
 

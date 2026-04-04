@@ -357,13 +357,14 @@ $('fi').addEventListener('change',e=>{
 const ESSENTIAL_FEATURES=[
   {id:'ess-sources-web',name:'Sources - Recherche sur internet',enabled:true,usecase:'',link:'',atelier:false},
   {id:'ess-sources-lecteur',name:'Sources - Lecteur web',enabled:true,usecase:'',link:'',atelier:false},
+  {id:'ess-sources-fichiers',name:'Sources - Analyser vos propres fichiers',enabled:true,usecase:'',link:'',atelier:false},
   {id:'ess-image',name:'Outils - Génération d\'image',enabled:true,usecase:'',link:'',atelier:false},
   {id:'ess-traduction',name:'Outils - Traduire un document',enabled:true,usecase:'',link:'',atelier:false},
   {id:'ess-mail',name:'Outils - Envoyer un mail',enabled:true,usecase:'',link:'',atelier:false},
   {id:'ess-audio',name:'Outils - Générer un fichier audio',enabled:true,usecase:'',link:'',atelier:false},
   {id:'ess-canvas',name:'Outils - Canvas',enabled:true,usecase:'',link:'',atelier:false},
-  {id:'ess-assistant',name:'Créer un assistant',enabled:true,usecase:'',link:'',atelier:false},
-  {id:'ess-document',name:'Générer un document à la charte',enabled:true,usecase:'',link:'',atelier:false},
+  {id:'ess-assistant',name:'Assistant - Créer votre propre assistant',enabled:true,usecase:'',link:'',atelier:false},
+  {id:'ess-document',name:'Assistant - Utiliser \'Outils communication\' pour des documents à la charte',enabled:true,usecase:'',link:'',atelier:false},
 ];
 
 $('bR').addEventListener('click',()=>{

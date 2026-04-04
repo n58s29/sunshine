@@ -1,6 +1,13 @@
 # Changelog
 
-## [En cours] — 2026-04-01
+## [En cours] — 2026-04-04
+
+### Modifié
+- Refonte graphique UX/UI (charte visuelle, mise en page, typographie…)
+
+---
+
+## [1.0.0] — 2026-04-04
 
 ### Modifié
 - La pop-up de rappel SharePoint s'affiche désormais après l'export **💾 JSON** (et non plus après **📧 Envoyer**)

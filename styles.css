@@ -162,7 +162,7 @@ body {
 
 .fc {
   display: grid;
-  grid-template-columns: 34px 190px 1fr auto 22px;
+  grid-template-columns: 28px 190px 1fr auto 22px;
   align-items: center;
   gap: .7rem;
   background: var(--surface-flottante);
@@ -183,30 +183,19 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
-.fi {
-  width: 30px; height: 30px;
-  background: var(--surface-basse);
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1rem;
-  flex-shrink: 0;
-  position: relative;
-}
 .step-num {
-  position: absolute;
-  top: -5px; left: -5px;
-  background: var(--bleu-marine);
-  color: var(--blanc);
-  font-size: .5rem;
-  font-weight: 500;
-  width: 14px; height: 14px;
+  width: 26px; height: 26px;
   border-radius: 50%;
+  background: var(--primaire);
+  color: var(--sur-primaire);
+  font-size: .7rem;
+  font-weight: 500;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
   line-height: 1;
+  letter-spacing: 0;
 }
 .fn {
   font-weight: 500;
@@ -245,17 +234,16 @@ body {
 }
 .fc.done .fn,
 .fc.done .fu { opacity: .45; }
-.fc.done .fi { background: #f5f0d8; }
+.fc.done .step-num { background: var(--ambre); color: var(--primaire); }
 
 /* Atelier state */
 .fc.atelier {
   border-left-color: var(--lavande);
   background: #f7f5ff;
 }
-.fc.atelier .fi { background: #ede9fe; }
 .fc.atelier .step-num { background: var(--lavande); }
 .fc.atelier.done { background: #eee9f5; }
-.fc.atelier.done .fi { background: #ddd6fe; }
+.fc.atelier.done .step-num { background: var(--lavande); opacity: .6; }
 
 .atelier-badge {
   display: inline-block;
@@ -726,7 +714,7 @@ body {
 @media (max-width: 800px) {
   .hd { padding: 1rem; }
   .mn { padding: .8rem 1rem 2rem; }
-  .fc { grid-template-columns: 30px 1fr; gap: .4rem; padding: .5rem .65rem; }
+  .fc { grid-template-columns: 26px 1fr; gap: .4rem; padding: .5rem .65rem; }
   .fn { grid-column: 2; }
   .fu { grid-column: 1/-1; }
   .fl { grid-column: 1/-1; }

@@ -68,7 +68,7 @@ function render(){
   if(!en.length){$('fc').innerHTML='';$('em').style.display='block';return}
   $('em').style.display='none';
   $('fc').innerHTML=en.map((f,i)=>`<div class="fc${doneSet.has(f.id)?' done':''}${f.atelier?' atelier':''}" data-fid="${f.id}" style="animation-delay:${i*.03}s">
-    <div class="fi"><span class="step-num">${i+1}</span></div>
+    <span class="step-num">${i+1}</span>
     <div class="fn">${f.atelier?'<span class="atelier-badge">Atelier</span>':''}${esc(f.name)}</div>
     <div class="fu">${esc(f.usecase)||'<em style="color:var(--g500)">À définir</em>'}</div>
     <div class="fl">${f.link?`<a href="${esc(f.link)}" class="demo-link" rel="noopener">Démo <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"/></svg></a>`:'<span class="nl">—</span>'}</div>

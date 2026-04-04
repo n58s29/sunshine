@@ -359,8 +359,7 @@ $('fi').addEventListener('change',e=>{
 $('bR').addEventListener('click',()=>{
   if(!confirm('Supprimer toutes les données et repartir de zéro ?'))return;
   localStorage.removeItem('sg-config');
-  C=JSON.parse(JSON.stringify(DF));
-  render();closeEd();toast('Données effacées ✓');
+  window.location.reload();
 });
 
 $('fab').addEventListener('click',()=>{closeInfo();$('ep').classList.contains('open')?closeEd():openEd()});

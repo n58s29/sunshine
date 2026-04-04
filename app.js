@@ -358,7 +358,8 @@ $('fi').addEventListener('change',e=>{
 
 $('bR').addEventListener('click',()=>{
   if(!confirm('Supprimer toutes les données et repartir de zéro ?'))return;
-  localStorage.removeItem('sg-config');
+  const empty={session:{...DF.session,title:'',collectif:'',animateur:'',emailCommanditaire:'',lienSat:'',logo:'',metier:''},features:[]};
+  localStorage.setItem('sg-config',JSON.stringify(empty));
   window.location.reload();
 });
 

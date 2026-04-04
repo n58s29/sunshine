@@ -354,10 +354,22 @@ $('fi').addEventListener('change',e=>{
     else{toast('Fichier invalide ✗')}}catch{toast('Erreur JSON ✗')}};
   r.readAsText(f);e.target.value=''});
 
+const ESSENTIAL_FEATURES=[
+  {id:'ess-sources-web',name:'Sources - Recherche sur internet',enabled:true,usecase:'',link:'',atelier:false},
+  {id:'ess-sources-lecteur',name:'Sources - Lecteur web',enabled:true,usecase:'',link:'',atelier:false},
+  {id:'ess-image',name:'Outils - Génération d\'image',enabled:true,usecase:'',link:'',atelier:false},
+  {id:'ess-traduction',name:'Outils - Traduire un document',enabled:true,usecase:'',link:'',atelier:false},
+  {id:'ess-mail',name:'Outils - Envoyer un mail',enabled:true,usecase:'',link:'',atelier:false},
+  {id:'ess-audio',name:'Outils - Générer un fichier audio',enabled:true,usecase:'',link:'',atelier:false},
+  {id:'ess-canvas',name:'Outils - Canvas',enabled:true,usecase:'',link:'',atelier:false},
+  {id:'ess-assistant',name:'Créer un assistant',enabled:true,usecase:'',link:'',atelier:false},
+  {id:'ess-document',name:'Générer un document à la charte',enabled:true,usecase:'',link:'',atelier:false},
+];
+
 $('bR').addEventListener('click',()=>{
   if(!confirm('Supprimer toutes les données et repartir de zéro ?'))return;
-  const empty={session:{...DF.session,title:'',collectif:'',animateur:'',emailCommanditaire:'',lienSat:'',logo:'',metier:''},features:[]};
-  localStorage.setItem('sg-config',JSON.stringify(empty));
+  const blank={session:{...DF.session,title:'',collectif:'',animateur:'',emailCommanditaire:'',lienSat:'',logo:'',metier:''},features:JSON.parse(JSON.stringify(ESSENTIAL_FEATURES))};
+  localStorage.setItem('sg-config',JSON.stringify(blank));
   window.location.reload();
 });
 

@@ -186,8 +186,8 @@ body {
 .step-num {
   width: 26px; height: 26px;
   border-radius: 50%;
-  background: var(--primaire);
-  color: var(--sur-primaire);
+  background: var(--gris);
+  color: var(--sur-surface);
   font-size: .7rem;
   font-weight: 500;
   display: flex;
@@ -234,7 +234,7 @@ body {
 }
 .fc.done .fn,
 .fc.done .fu { opacity: .45; }
-.fc.done .step-num { background: var(--ambre); color: var(--primaire); }
+.fc.done .step-num { background: var(--ambre); color: var(--bleu-marine); }
 
 /* Atelier state */
 .fc.atelier {

@@ -13,7 +13,13 @@ const METIERS=[
   "Télécoms"
 ];
 
-const DF={session:{title:"Sensibilisation à l'IA Générative",collectif:"Collectif TER Centre-Ouest",date:new Date().toISOString().split('T')[0],animateur:"Mat — Fabrique de l'Adoption Numérique",participants:12,emailCommanditaire:"",lienSat:"",logo:"",metier:""},features:[
+const NIVEAUX=[
+  {value:1,label:"Niveau 1 — Basique"},
+  {value:2,label:"Niveau 2 — Intermédiaire"},
+  {value:3,label:"Niveau 3 — Expérimenté"}
+];
+
+const DF={session:{title:"Sensibilisation à l'IA Générative",collectif:"Collectif TER Centre-Ouest",date:new Date().toISOString().split('T')[0],animateur:"Mat — Fabrique de l'Adoption Numérique",participants:12,emailCommanditaire:"",lienSat:"",logo:"",metier:"",niveau:1},features:[
 {id:"synthese",icon:"📄",name:"Synthèse / Résumé",enabled:true,usecase:"Résumer un rapport d'activité de 40 pages en une note d'une page pour le CODIR."},
 {id:"redaction",icon:"✍️",name:"Rédaction (mails, CR, notes)",enabled:true,usecase:"Rédiger un CR structuré à partir de notes manuscrites de réunion d'exploitation."},
 {id:"analyse",icon:"📊",name:"Analyse de données / tableaux",enabled:true,usecase:"Analyser un export Excel de ponctualité mensuelle et identifier les axes de dégradation."},
@@ -64,6 +70,8 @@ function render(){
   $('dD').textContent=fmtDate(C.session.date);
   $('dN').textContent=(C.session.participants||'?')+' participants';
   if(C.session.metier){$('dM').textContent=C.session.metier;$('dMw').style.display=''}else{$('dMw').style.display='none'}
+  const niv=NIVEAUX.find(n=>n.value===(C.session.niveau||1));
+  $('dNv').textContent=niv?niv.label:'';$('dNvw').style.display='';
   const en=C.features.filter(f=>f.enabled);
   if(!en.length){$('fc').innerHTML='';$('em').style.display='block';return}
   $('em').style.display='none';
@@ -106,6 +114,7 @@ function renderEdit(){
       <div class="ef"><label>Titre</label><input type="text" id="eT" value="${esc(C.session.title)}"></div>
       <div class="ef"><label>Collectif / Équipe</label><input type="text" id="eC" value="${esc(C.session.collectif)}"></div>
       <div class="ef"><label>Famille de métiers</label><select id="eFM"><option value="">— Sélectionner —</option>${METIERS.map(m=>`<option value="${esc(m)}" ${C.session.metier===m?'selected':''}>${esc(m)}</option>`).join('')}</select></div>
+      <div class="ef"><label>Niveau de l'atelier</label><select id="eNv">${NIVEAUX.map(n=>`<option value="${n.value}" ${(C.session.niveau||1)===n.value?'selected':''}>${esc(n.label)}</option>`).join('')}</select></div>
       <div class="ef-row">
         <div class="ef"><label>Date</label><input type="date" id="eD" value="${esc(C.session.date)}"></div>
         <div class="ef"><label>Participants</label><input type="number" id="eN" value="${C.session.participants||''}" min="1" placeholder="12"></div>
@@ -187,6 +196,7 @@ function readFields(){
   C.session.animateur=$('eA').value;C.session.participants=+$('eN').value||0;
   C.session.emailCommanditaire=$('eM').value;C.session.lienSat=$('eQ').value;
   C.session.metier=$('eFM').value;
+  C.session.niveau=+$('eNv').value||1;
   document.querySelectorAll('.tc').forEach(cb=>{C.features[+cb.dataset.i].enabled=cb.checked});
   document.querySelectorAll('.eu').forEach(ta=>{C.features[+ta.dataset.i].usecase=ta.value});
   document.querySelectorAll('.el').forEach(inp=>{C.features[+inp.dataset.i].link=inp.value});

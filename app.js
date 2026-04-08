@@ -214,6 +214,7 @@ $('bE').addEventListener('click',()=>{
   const a=document.createElement('a');a.href=URL.createObjectURL(blob);
   a.download=`sensibilisation-${d}-${col}.json`;
   a.click();URL.revokeObjectURL(a.href);toast('JSON exporté ✓');
+  window.open('https://sncf.sharepoint.com/sites/FAN_usecasesIAGenGrpO365/Documents%20partages/Forms/AllItems.aspx','_blank','noopener');
   $('mo').classList.add('open');});
 
 // ===== EXPORT MAIL (.eml with HTML body) =====

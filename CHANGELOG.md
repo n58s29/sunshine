@@ -1,5 +1,16 @@
 # Changelog
 
+## [En cours] — 2026-04-08
+
+### Ajouté
+- **Niveau de l'atelier** : nouveau champ dans le panneau de configuration — Niveau 1 (Basique), Niveau 2 (Intermédiaire), Niveau 3 (Expérimenté). Affiché dans l'en-tête de session et inclus dans le JSON exporté (`session.niveau`).
+
+### Modifié
+- Bouton **💾 JSON** renommé en **💾 Exporter**
+- L'export ouvre automatiquement le SharePoint FAN dans un nouvel onglet après le téléchargement du fichier
+
+---
+
 ## [En cours] — 2026-04-04
 
 ### Ajouté

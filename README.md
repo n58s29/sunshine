@@ -22,7 +22,7 @@ Un seul fichier HTML. Zéro installation. Une session prête en 5 minutes.
 
 ## Fonctionnalités
 
-- **Configuration complète** de la session : collectif, date, animateur, famille de métiers, logo entité
+- **Configuration complète** de la session : collectif, date, animateur, famille de métiers, niveau (Basique / Intermédiaire / Expérimenté), logo entité
 - **12 fonctionnalités GenAI** pré-configurées, activables/désactivables individuellement
 - **Cas d'usage métier** personnalisables par fonctionnalité
 - **Mode Atelier** : marquez une fonctionnalité comme exercice participant — la brique change de couleur et affiche un badge `Atelier`
@@ -52,7 +52,7 @@ Un seul fichier HTML. Zéro installation. Une session prête en 5 minutes.
 - Cocher ✓ les fonctionnalités au fil de la présentation
 
 ### Après la session
-- Cliquer **💾 JSON** pour archiver la configuration et l'uploader sur le SharePoint FAN
+- Cliquer **💾 Exporter** pour télécharger le JSON et ouvrir automatiquement le SharePoint FAN
 - Cliquer **📧 Envoyer** pour générer le mail récap `.eml` à ouvrir dans Outlook
 
 ---

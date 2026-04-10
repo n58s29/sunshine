@@ -230,7 +230,7 @@ function buildEml(){
     const num=i+1;
     const isAtelier=!!f.atelier;
     const bg=isAtelier?'#f5f3ff':'#ffffff';
-    const nameCellStyle=`padding:6px 12px;font-family:Aptos,Calibri,Arial,sans-serif;font-size:11pt;color:#001F5A;font-weight:600;border-bottom:1px solid #e4e7ec;white-space:nowrap;vertical-align:top;background:${bg};`;
+    const nameCellStyle=`width:220px;padding:6px 12px;font-family:Aptos,Calibri,Arial,sans-serif;font-size:11pt;color:#001F5A;font-weight:600;border-bottom:1px solid #e4e7ec;white-space:nowrap;vertical-align:top;background:${bg};`;
     const ucCellStyle=`padding:6px 12px;font-family:Aptos,Calibri,Arial,sans-serif;font-size:11pt;color:#333;border-bottom:1px solid #e4e7ec;vertical-align:top;background:${bg};`;
     const numBadge=`<span style="display:inline-block;background:${isAtelier?'#7c3aed':'#001F5A'};color:#fff;font-size:8pt;font-weight:700;width:16px;height:16px;border-radius:50%;text-align:center;line-height:16px;margin-right:6px;vertical-align:middle;">${num}</span>`;
     const atelierBadge=isAtelier?`<span style="display:inline-block;background:#7c3aed;color:#fff;font-size:7.5pt;font-weight:700;padding:1px 5px;border-radius:3px;margin-right:5px;vertical-align:middle;">Atelier</span>`:'';
@@ -265,8 +265,8 @@ function buildEml(){
   ${C.session.lienSat?`<tr><td style="padding:0 28px 16px;">
     <table width="100%" cellpadding="0" cellspacing="0"><tr>
       <td style="background:#DAAA00;border-radius:6px;padding:14px 20px;">
-        <p style="margin:0;font-family:Aptos,Calibri,Arial,sans-serif;font-size:11pt;font-weight:700;color:#001F5A;">Votre avis compte !</p>
-        <p style="margin:4px 0 0;font-family:Aptos,Calibri,Arial,sans-serif;font-size:10pt;color:#001F5A;">Merci de prendre 2 min pour répondre au <a href="${esc(C.session.lienSat)}" style="color:#001F5A;text-decoration:underline;font-weight:600;">questionnaire de satisfaction</a></p>
+        <p style="margin:0;font-family:Aptos,Calibri,Arial,sans-serif;font-size:16pt;font-weight:700;color:#001F5A;">Votre avis compte !</p>
+        <p style="margin:4px 0 0;font-family:Aptos,Calibri,Arial,sans-serif;font-size:11pt;color:#001F5A;">Merci de prendre 2 min pour répondre au <a href="${esc(C.session.lienSat)}" style="color:#001F5A;text-decoration:underline;font-weight:600;">questionnaire de satisfaction</a></p>
       </td>
     </tr></table>
   </td></tr>`:''}
@@ -274,7 +274,7 @@ function buildEml(){
   <tr><td style="padding:0 28px;">
     <table width="100%" cellpadding="0" cellspacing="0" style="border:1px solid #e4e7ec;border-radius:4px;border-collapse:collapse;">
       <tr style="background:#f4f5f7;">
-        <td style="padding:8px 12px;font-family:Aptos,Calibri,Arial,sans-serif;font-size:9pt;font-weight:600;color:#7c849a;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #0088CE;">Fonctionnalité</td>
+        <td style="width:220px;padding:8px 12px;font-family:Aptos,Calibri,Arial,sans-serif;font-size:9pt;font-weight:600;color:#7c849a;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #0088CE;">Fonctionnalité</td>
         <td style="padding:8px 12px;font-family:Aptos,Calibri,Arial,sans-serif;font-size:9pt;font-weight:600;color:#7c849a;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #0088CE;">Cas d'usage abordé</td>
       </tr>
       ${rows}
@@ -285,6 +285,10 @@ function buildEml(){
     <table cellpadding="0" cellspacing="0"><tr>
       <td style="background:#0088CE;border-radius:4px;padding:10px 20px;">
         <a href="https://gpt.sncf.fr" style="font-family:Aptos,Calibri,Arial,sans-serif;font-size:11pt;font-weight:600;color:#ffffff;text-decoration:none;">Accéder à Groupe SNCF GPT</a>
+      </td>
+      <td width="12"></td>
+      <td style="background:#0062A3;border-radius:4px;padding:10px 20px;">
+        <a href="https://engage.cloud.microsoft/main/org/sncf.fr/groups/eyJfdHlwZSI6Ikdyb3VwIiwiaWQiOiIyMTQ3MDcyOTAxMTIifQ" style="font-family:Aptos,Calibri,Arial,sans-serif;font-size:11pt;font-weight:600;color:#ffffff;text-decoration:none;">Communauté Groupe SNCF GPT</a>
       </td>
     </tr></table>
   </td></tr>

@@ -1,6 +1,15 @@
 # Changelog
 
-## [En cours] — 2026-04-08
+## [1.1.1] — 2026-04-10
+
+### Modifié
+- **Mail `.eml`** — tableau des fonctionnalités : largeur de la colonne « Fonctionnalité » fixée à 220 px pour stabiliser la mise en page
+- **Mail `.eml`** — bloc questionnaire de satisfaction : titre « Votre avis compte ! » agrandi (16 pt) pour le rendre immédiatement visible
+- **Mail `.eml`** — ajout d'un bouton « Communauté Groupe SNCF GPT » (lien Viva Engage) à côté du bouton « Accéder à Groupe SNCF GPT »
+
+---
+
+## [1.1.0] — 2026-04-08
 
 ### Ajouté
 - **Niveau de l'atelier** : nouveau champ dans le panneau de configuration — Niveau 1 (Basique), Niveau 2 (Intermédiaire), Niveau 3 (Expérimenté). Affiché dans l'en-tête de session et inclus dans le JSON exporté (`session.niveau`).

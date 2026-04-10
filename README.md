@@ -32,7 +32,7 @@ Un seul fichier HTML. Zéro installation. Une session prête en 5 minutes.
 - **Suivi en live** : cochez les fonctionnalités au fur et à mesure qu'elles sont présentées
 - **Export JSON** pour archiver et réutiliser la configuration
 - **Import JSON** pour reprendre une session existante ou partager avec un collègue animateur
-- **Génération de mail `.eml`** compatible Outlook avec tableau récap, lien GPT SNCF et questionnaire de satisfaction
+- **Génération de mail `.eml`** compatible Outlook avec tableau récap (colonnes à largeur fixe), lien GPT SNCF, bouton communauté Viva Engage et questionnaire de satisfaction mis en valeur
 - **Responsive** mobile et styles impression
 
 ---
